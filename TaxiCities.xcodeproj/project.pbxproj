@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9405B9A81CE5D3A400AAF18F /* CityAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9405B9A71CE5D3A400AAF18F /* CityAnnotation.swift */; };
 		9481D5811CE5C17F008A2B1E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9481D5801CE5C17F008A2B1E /* City.swift */; };
 		94EA5E8C1CE49AEC00C2D33D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA5E8B1CE49AEC00C2D33D /* AppDelegate.swift */; };
 		94EA5E8E1CE49AEC00C2D33D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA5E8D1CE49AEC00C2D33D /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9405B9A71CE5D3A400AAF18F /* CityAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityAnnotation.swift; sourceTree = "<group>"; };
 		9481D5801CE5C17F008A2B1E /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		94EA5E881CE49AEB00C2D33D /* TaxiCities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiCities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EA5E8B1CE49AEC00C2D33D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				94EA5EA71CE51DEA00C2D33D /* LoadingCell.xib */,
 				94EA5EA91CE5B4AC00C2D33D /* MapViewController.swift */,
 				9481D5801CE5C17F008A2B1E /* City.swift */,
+				9405B9A71CE5D3A400AAF18F /* CityAnnotation.swift */,
 			);
 			path = TaxiCities;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9405B9A81CE5D3A400AAF18F /* CityAnnotation.swift in Sources */,
 				94EA5E8E1CE49AEC00C2D33D /* ViewController.swift in Sources */,
 				94EA5E8C1CE49AEC00C2D33D /* AppDelegate.swift in Sources */,
 				9481D5811CE5C17F008A2B1E /* City.swift in Sources */,

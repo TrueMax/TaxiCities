@@ -37,7 +37,7 @@
                     <navigationItem key="navigationItem" title="СПИСОК ГОРОДОВ" id="k7u-j8-DmG"/>
                     <connections>
                         <outlet property="tableView" destination="GY1-mG-9ff" id="YnE-cc-YRY"/>
-                        <segue destination="ean-6o-Vhh" kind="presentation" identifier="ShowCity" modalTransitionStyle="flipHorizontal" id="mre-fM-9Lr"/>
+                        <segue destination="ean-6o-Vhh" kind="presentation" identifier="ShowCity" modalTransitionStyle="partialCurl" id="mre-fM-9Lr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

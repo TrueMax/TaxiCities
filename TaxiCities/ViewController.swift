@@ -14,7 +14,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var json: JSON?
     @IBOutlet weak var tableView: UITableView!
     var cities: [City] = []
-    var selectedCity = ""
+    var selectedCityName = ""
+    var selectedCity: City?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +58,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 if let strongSelf = self {strongSelf.json = JSON(data: jsonData)
                     strongSelf.cities = strongSelf.parseCities(strongSelf.json!)!
-                print(strongSelf.cities)
                 }
                 
             } else {
@@ -109,6 +109,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let cityName = dictionary["city_name"].stringValue
             let latitude = dictionary["city_latitude"].doubleValue
             let longitude = dictionary["city_longitude"].doubleValue
+            
             city.name = cityName
             city.latitude = latitude
             city.longitude = longitude
@@ -116,9 +117,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         return cities
     }
-
-    
-    
     
 //MARK: - TableView Methods
 
@@ -147,7 +145,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedCity = cities[indexPath.row].name
+        selectedCityName = cities[indexPath.row].name
+        selectedCity = cities[indexPath.row]
         performSegueWithIdentifier("ShowCity", sender: self)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
@@ -156,7 +155,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if segue.identifier == "ShowCity" {
             let navcontroller = segue.destinationViewController as! UINavigationController
             let controller = navcontroller.topViewController as! MapViewController
-            controller.navigationItem.title = selectedCity
+            controller.navigationItem.title = selectedCityName
+            controller.cityName = (selectedCity?.name)!
+            controller.cityLatitude = (selectedCity?.latitude)!
+            controller.cityLongitude = (selectedCity?.longitude)!
         }
     }
     
