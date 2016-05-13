@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9405B9A81CE5D3A400AAF18F /* CityAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9405B9A71CE5D3A400AAF18F /* CityAnnotation.swift */; };
 		9481D5811CE5C17F008A2B1E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9481D5801CE5C17F008A2B1E /* City.swift */; };
+		9497D5211CE5FF8700987C41 /* car223.png in Resources */ = {isa = PBXBuildFile; fileRef = 9497D5201CE5FF8700987C41 /* car223.png */; };
 		94EA5E8C1CE49AEC00C2D33D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA5E8B1CE49AEC00C2D33D /* AppDelegate.swift */; };
 		94EA5E8E1CE49AEC00C2D33D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA5E8D1CE49AEC00C2D33D /* ViewController.swift */; };
 		94EA5E911CE49AEC00C2D33D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EA5E8F1CE49AEC00C2D33D /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		9405B9A71CE5D3A400AAF18F /* CityAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityAnnotation.swift; sourceTree = "<group>"; };
 		9481D5801CE5C17F008A2B1E /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		9497D5201CE5FF8700987C41 /* car223.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car223.png; sourceTree = "<group>"; };
 		94EA5E881CE49AEB00C2D33D /* TaxiCities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiCities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EA5E8B1CE49AEC00C2D33D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94EA5E8D1CE49AEC00C2D33D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				94EA5E8F1CE49AEC00C2D33D /* Main.storyboard */,
 				94EA5E921CE49AEC00C2D33D /* Assets.xcassets */,
 				94EA5E941CE49AEC00C2D33D /* LaunchScreen.storyboard */,
+				9497D5201CE5FF8700987C41 /* car223.png */,
 				94EA5E971CE49AEC00C2D33D /* Info.plist */,
 				94EA5EA31CE4E57300C2D33D /* CityCell.xib */,
 				94EA5EA51CE4E68A00C2D33D /* CityCell.swift */,
@@ -143,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9497D5211CE5FF8700987C41 /* car223.png in Resources */,
 				94EA5E961CE49AEC00C2D33D /* LaunchScreen.storyboard in Resources */,
 				94EA5EA41CE4E57300C2D33D /* CityCell.xib in Resources */,
 				94EA5E931CE49AEC00C2D33D /* Assets.xcassets in Resources */,
