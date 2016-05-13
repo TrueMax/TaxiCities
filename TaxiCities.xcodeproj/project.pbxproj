@@ -12,8 +12,10 @@
 		94EA5E911CE49AEC00C2D33D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EA5E8F1CE49AEC00C2D33D /* Main.storyboard */; };
 		94EA5E931CE49AEC00C2D33D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94EA5E921CE49AEC00C2D33D /* Assets.xcassets */; };
 		94EA5E961CE49AEC00C2D33D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EA5E941CE49AEC00C2D33D /* LaunchScreen.storyboard */; };
-		94EA5E9E1CE4B80300C2D33D /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94EA5E9D1CE4B80300C2D33D /* LoadingCell.xib */; };
 		94EA5EA21CE4C37300C2D33D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA5EA11CE4C37300C2D33D /* SwiftyJSON.swift */; };
+		94EA5EA41CE4E57300C2D33D /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94EA5EA31CE4E57300C2D33D /* CityCell.xib */; };
+		94EA5EA61CE4E68A00C2D33D /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA5EA51CE4E68A00C2D33D /* CityCell.swift */; };
+		94EA5EA81CE51DEA00C2D33D /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94EA5EA71CE51DEA00C2D33D /* LoadingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +26,10 @@
 		94EA5E921CE49AEC00C2D33D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94EA5E951CE49AEC00C2D33D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94EA5E971CE49AEC00C2D33D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		94EA5E9D1CE4B80300C2D33D /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadingCell.xib; path = ../../StoreSearch/StoreSearch/LoadingCell.xib; sourceTree = "<group>"; };
 		94EA5EA11CE4C37300C2D33D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		94EA5EA31CE4E57300C2D33D /* CityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
+		94EA5EA51CE4E68A00C2D33D /* CityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		94EA5EA71CE51DEA00C2D33D /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,6 @@
 		94EA5E8A1CE49AEC00C2D33D /* TaxiCities */ = {
 			isa = PBXGroup;
 			children = (
-				94EA5E9D1CE4B80300C2D33D /* LoadingCell.xib */,
 				94EA5EA11CE4C37300C2D33D /* SwiftyJSON.swift */,
 				94EA5E8B1CE49AEC00C2D33D /* AppDelegate.swift */,
 				94EA5E8D1CE49AEC00C2D33D /* ViewController.swift */,
@@ -66,6 +69,9 @@
 				94EA5E921CE49AEC00C2D33D /* Assets.xcassets */,
 				94EA5E941CE49AEC00C2D33D /* LaunchScreen.storyboard */,
 				94EA5E971CE49AEC00C2D33D /* Info.plist */,
+				94EA5EA31CE4E57300C2D33D /* CityCell.xib */,
+				94EA5EA51CE4E68A00C2D33D /* CityCell.swift */,
+				94EA5EA71CE51DEA00C2D33D /* LoadingCell.xib */,
 			);
 			path = TaxiCities;
 			sourceTree = "<group>";
@@ -129,8 +135,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				94EA5E961CE49AEC00C2D33D /* LaunchScreen.storyboard in Resources */,
+				94EA5EA41CE4E57300C2D33D /* CityCell.xib in Resources */,
 				94EA5E931CE49AEC00C2D33D /* Assets.xcassets in Resources */,
-				94EA5E9E1CE4B80300C2D33D /* LoadingCell.xib in Resources */,
+				94EA5EA81CE51DEA00C2D33D /* LoadingCell.xib in Resources */,
 				94EA5E911CE49AEC00C2D33D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +151,7 @@
 			files = (
 				94EA5E8E1CE49AEC00C2D33D /* ViewController.swift in Sources */,
 				94EA5E8C1CE49AEC00C2D33D /* AppDelegate.swift in Sources */,
+				94EA5EA61CE4E68A00C2D33D /* CityCell.swift in Sources */,
 				94EA5EA21CE4C37300C2D33D /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

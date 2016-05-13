@@ -8,40 +8,68 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var isLoadingData = false
     var json: JSON?
+    @IBOutlet weak var tableView: UITableView!
+    var cities: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        tableView.rowHeight = 80
+        var cellNib = UINib(nibName: "CityCell", bundle: nil)
+        tableView.registerNib(cellNib, forCellReuseIdentifier: "CityCell")
+        
+        cellNib = UINib(nibName: "LoadingCell", bundle: nil)
+        tableView.registerNib(cellNib, forCellReuseIdentifier: "LoadingCell")
+        
+        loadData()
     }
-
+    
+//MARK: - Networking Methods 
     
     func loadData() {
         
+        isLoadingData = true
+        
         let session = NSURLSession.sharedSession()
         let url = NSURL(string: "http://beta.taxistock.ru/taxik/api/client/query_cities")
-        let dataTask = session.dataTaskWithURL(url!){ [weak self] data, response, error in
+        let dataTask = session.dataTaskWithURL(url!, completionHandler: { [weak self] data, response, error in
             
             if error != nil {
-                self!.showNetworkError()
+                dispatch_async(dispatch_get_main_queue()){
+                    self!.showNetworkError()
+                }
             }
             
             guard let response = response as? NSHTTPURLResponse where response.statusCode == 200 else {
+                dispatch_async(dispatch_get_main_queue()){
                 self!.showServerError()
+                }
                 return
             }
             
-            guard let jsonData = data else {
-                self!.showJsonError()
-                return
+            if let jsonData = data {
+                
+                if let strongSelf = self {strongSelf.json = JSON(data: jsonData)
+                    strongSelf.cities = strongSelf.parseCities(strongSelf.json!)!
+                }
+                
+            } else {
+                dispatch_async(dispatch_get_main_queue()){
+                    self!.showJsonError()
+                }
             }
             
-            self!.json = self!.parseJsonData(jsonData)
-            
-        }
+            dispatch_async(dispatch_get_main_queue()){
+                print(self!.json)
+                self!.isLoadingData = false
+                self!.tableView.reloadData()
+            }
+        })
         
         dataTask.resume()
     }
@@ -67,16 +95,47 @@ class ViewController: UIViewController {
             presentViewController(controller, animated: true, completion: nil)
     }
     
-    func parseJsonData(data: NSData) -> JSON? {
-        do {
-            return try NSJSONSerialization.JSONObjectWithData(data, options: []) as? JSON
-        } catch {
-            showJsonError()
-            return nil
-        }
-
+//MARK: - Parsing Data Methods
+    
+    func parseCities(json: JSON) -> [String]? {
         
+        var cities: [String] = []
+        let jsonArray = json["cities"].arrayValue
+        for dictionary in jsonArray {
+            let element = dictionary["city_name"].stringValue
+            cities.append(element)
+        }
+        return cities
     }
 
+    
+    
+    
+//MARK: - TableView Methods
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isLoadingData {
+            return 1
+        } else {
+            return cities.count
+        }
+        
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if isLoadingData {
+            let cell = tableView.dequeueReusableCellWithIdentifier("LoadingCell", forIndexPath: indexPath)
+            let spinner = cell.viewWithTag(100) as! UIActivityIndicatorView
+            spinner.startAnimating()
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("CityCell", forIndexPath: indexPath) as! CityCell
+            
+            let city = cities[indexPath.row]
+            cell.configureCity(city)
+            return cell
+        }
+    }
+    
 }
 
