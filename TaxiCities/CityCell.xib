@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" tag="909" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название города" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcc-6M-FdR">
-                        <rect key="frame" x="5" y="5" width="310" height="33"/>
+                        <rect key="frame" x="15" y="5" width="300" height="33"/>
                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -24,7 +24,7 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="zcc-6M-FdR" secondAttribute="bottom" constant="5" id="DW1-qV-nEv"/>
                     <constraint firstItem="zcc-6M-FdR" firstAttribute="top" secondItem="qbj-hR-JAa" secondAttribute="top" constant="5" id="ZsJ-3M-J6F"/>
-                    <constraint firstItem="zcc-6M-FdR" firstAttribute="leading" secondItem="qbj-hR-JAa" secondAttribute="leading" constant="5" id="iKO-hQ-Dnj"/>
+                    <constraint firstItem="zcc-6M-FdR" firstAttribute="leading" secondItem="qbj-hR-JAa" secondAttribute="leading" constant="15" id="iKO-hQ-Dnj"/>
                     <constraint firstAttribute="trailing" secondItem="zcc-6M-FdR" secondAttribute="trailing" constant="-28" id="oFh-ih-3Kw"/>
                 </constraints>
             </tableViewCellContentView>

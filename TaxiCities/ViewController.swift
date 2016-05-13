@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
-        tableView.rowHeight = 80
+        tableView.rowHeight = 66
         var cellNib = UINib(nibName: "CityCell", bundle: nil)
         tableView.registerNib(cellNib, forCellReuseIdentifier: "CityCell")
         
