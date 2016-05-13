@@ -13,7 +13,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var isLoadingData = false
     var json: JSON?
     @IBOutlet weak var tableView: UITableView!
-    var cities: [String] = []
+    var cities: [City] = []
+    var selectedCity = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +57,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 if let strongSelf = self {strongSelf.json = JSON(data: jsonData)
                     strongSelf.cities = strongSelf.parseCities(strongSelf.json!)!
+                print(strongSelf.cities)
                 }
                 
             } else {
@@ -65,7 +67,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             
             dispatch_async(dispatch_get_main_queue()){
-                print(self!.json)
+                
                 self!.isLoadingData = false
                 self!.tableView.reloadData()
             }
@@ -97,13 +99,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
 //MARK: - Parsing Data Methods
     
-    func parseCities(json: JSON) -> [String]? {
+    func parseCities(json: JSON) -> [City]? {
         
-        var cities: [String] = []
+        
+        var cities: [City] = []
         let jsonArray = json["cities"].arrayValue
         for dictionary in jsonArray {
-            let element = dictionary["city_name"].stringValue
-            cities.append(element)
+            let city = City()
+            let cityName = dictionary["city_name"].stringValue
+            let latitude = dictionary["city_latitude"].doubleValue
+            let longitude = dictionary["city_longitude"].doubleValue
+            city.name = cityName
+            city.latitude = latitude
+            city.longitude = longitude
+            cities.append(city)
         }
         return cities
     }
@@ -134,6 +143,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let city = cities[indexPath.row]
             cell.configureCity(city)
             return cell
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedCity = cities[indexPath.row].name
+        performSegueWithIdentifier("ShowCity", sender: self)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowCity" {
+            let navcontroller = segue.destinationViewController as! UINavigationController
+            let controller = navcontroller.topViewController as! MapViewController
+            controller.navigationItem.title = selectedCity
         }
     }
     

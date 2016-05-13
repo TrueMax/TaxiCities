@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9481D5811CE5C17F008A2B1E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9481D5801CE5C17F008A2B1E /* City.swift */; };
 		94EA5E8C1CE49AEC00C2D33D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA5E8B1CE49AEC00C2D33D /* AppDelegate.swift */; };
 		94EA5E8E1CE49AEC00C2D33D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA5E8D1CE49AEC00C2D33D /* ViewController.swift */; };
 		94EA5E911CE49AEC00C2D33D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EA5E8F1CE49AEC00C2D33D /* Main.storyboard */; };
@@ -16,9 +17,11 @@
 		94EA5EA41CE4E57300C2D33D /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94EA5EA31CE4E57300C2D33D /* CityCell.xib */; };
 		94EA5EA61CE4E68A00C2D33D /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA5EA51CE4E68A00C2D33D /* CityCell.swift */; };
 		94EA5EA81CE51DEA00C2D33D /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94EA5EA71CE51DEA00C2D33D /* LoadingCell.xib */; };
+		94EA5EAA1CE5B4AC00C2D33D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EA5EA91CE5B4AC00C2D33D /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9481D5801CE5C17F008A2B1E /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		94EA5E881CE49AEB00C2D33D /* TaxiCities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiCities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EA5E8B1CE49AEC00C2D33D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94EA5E8D1CE49AEC00C2D33D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		94EA5EA31CE4E57300C2D33D /* CityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
 		94EA5EA51CE4E68A00C2D33D /* CityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		94EA5EA71CE51DEA00C2D33D /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		94EA5EA91CE5B4AC00C2D33D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				94EA5EA31CE4E57300C2D33D /* CityCell.xib */,
 				94EA5EA51CE4E68A00C2D33D /* CityCell.swift */,
 				94EA5EA71CE51DEA00C2D33D /* LoadingCell.xib */,
+				94EA5EA91CE5B4AC00C2D33D /* MapViewController.swift */,
+				9481D5801CE5C17F008A2B1E /* City.swift */,
 			);
 			path = TaxiCities;
 			sourceTree = "<group>";
@@ -151,7 +157,9 @@
 			files = (
 				94EA5E8E1CE49AEC00C2D33D /* ViewController.swift in Sources */,
 				94EA5E8C1CE49AEC00C2D33D /* AppDelegate.swift in Sources */,
+				9481D5811CE5C17F008A2B1E /* City.swift in Sources */,
 				94EA5EA61CE4E68A00C2D33D /* CityCell.swift in Sources */,
+				94EA5EAA1CE5B4AC00C2D33D /* MapViewController.swift in Sources */,
 				94EA5EA21CE4C37300C2D33D /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +312,7 @@
 				94EA5E9C1CE49AEC00C2D33D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -37,11 +37,51 @@
                     <navigationItem key="navigationItem" title="СПИСОК ГОРОДОВ" id="k7u-j8-DmG"/>
                     <connections>
                         <outlet property="tableView" destination="GY1-mG-9ff" id="YnE-cc-YRY"/>
+                        <segue destination="ean-6o-Vhh" kind="presentation" identifier="ShowCity" modalTransitionStyle="flipHorizontal" id="mre-fM-9Lr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1252" y="399"/>
+        </scene>
+        <!--ГОРОД НА КАРТЕ-->
+        <scene sceneID="HNS-q8-kW8">
+            <objects>
+                <viewController id="06J-gU-ZZ2" customClass="MapViewController" customModule="TaxiCities" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E8l-oo-8qE"/>
+                        <viewControllerLayoutGuide type="bottom" id="CFK-Ht-PBR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CD1-oK-Lc3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RVr-mk-1AG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RVr-mk-1AG" firstAttribute="top" secondItem="E8l-oo-8qE" secondAttribute="bottom" constant="-64" id="AFV-MQ-GDc"/>
+                            <constraint firstAttribute="trailing" secondItem="RVr-mk-1AG" secondAttribute="trailing" id="Cbs-1Z-Uni"/>
+                            <constraint firstItem="RVr-mk-1AG" firstAttribute="leading" secondItem="CD1-oK-Lc3" secondAttribute="leading" id="K6j-Dg-8mR"/>
+                            <constraint firstItem="RVr-mk-1AG" firstAttribute="bottom" secondItem="CFK-Ht-PBR" secondAttribute="top" id="pSi-8l-gtL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ГОРОД НА КАРТЕ" id="S5P-6L-zHi">
+                        <barButtonItem key="leftBarButtonItem" title="Назад" id="jj4-ax-7uV">
+                            <connections>
+                                <action selector="goBackToCities:" destination="06J-gU-ZZ2" id="bcc-1W-sVR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="RVr-mk-1AG" id="TL4-yY-udB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tlj-Vq-ltQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2796" y="248"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xzf-9z-3pF">
@@ -60,6 +100,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOx-M2-zFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="443" y="1059"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vBL-S1-tOe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ean-6o-Vhh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wZ1-YK-uyq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="06J-gU-ZZ2" kind="relationship" relationship="rootViewController" id="qBb-rY-rGo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yst-h6-1wE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1984" y="248"/>
         </scene>
     </scenes>
 </document>

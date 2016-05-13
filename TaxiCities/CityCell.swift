@@ -15,7 +15,7 @@ class CityCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func configureCity(city: String) {
-        label.text = city
+    func configureCity(city: City) {
+        label.text = city.name
     }
 }
